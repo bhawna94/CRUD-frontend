@@ -1,3 +1,24 @@
-<p>
-  delete-user works!
-</p>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="jumbotron">
+        <form  #userForm="ngForm" class="form-horizontal" (submit)="deleteUser();userForm.reset()">
+          <div class="form-group">
+            <label>User Id:</label>
+            <input type="text" class="form-control"  #userId="ngModel" name="userId"required [(ngModel)]="userid">
+          </div>
+          <button type="submit" [disabled]="!userForm.valid" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row spaceBetweenDiv">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+

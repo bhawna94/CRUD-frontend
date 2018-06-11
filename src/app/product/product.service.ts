@@ -23,4 +23,8 @@ export class ProductService {
     return this.http.put<Item>(postUrl, productInformation, httpOptions);
   }
 
+  deleteProductRecord(productId: number ): Observable <any> {
+    let deleteUrl = `${this.akkaBaseUrl}item/deleteItem/` + productId;
+    return this.http.delete(deleteUrl, httpOptions);
+  }
 }

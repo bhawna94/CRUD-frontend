@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserHomeService} from "../user-home.service";
 
 @Component({
   selector: 'app-delete-user',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteUserComponent implements OnInit {
 
-  constructor() { }
+  userid: any;
+  constructor(private userService: UserHomeService) { }
 
   ngOnInit() {
   }
+  deleteUser() {
+    let userid = this.userid;
+    this.userService.deleteUserRecord(userid).subscribe(data =>{
+        alert('user record has been deleted successfully');
+      },
+      error => alert('something went wrong!')
+    );
+  }
+
 
 }

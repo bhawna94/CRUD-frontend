@@ -24,4 +24,9 @@ export class UserHomeService {
 
     return this.http.put<User>(postUrl, userInformation, httpOptions);
   }
+
+  deleteUserRecord(userId: number ): Observable <any> {
+    let deleteUrl = `${this.akkaBaseUrl}item/deleteItem/` + userId;
+    return this.http.delete(deleteUrl, httpOptions);
+  }
 }
