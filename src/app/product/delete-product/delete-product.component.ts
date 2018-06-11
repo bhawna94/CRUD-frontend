@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductService} from '../product.service';
 
 @Component({
   selector: 'app-delete-product',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteProductComponent implements OnInit {
 
-  constructor() { }
+  product_Id: any;
+  constructor(private productService: ProductService ) { }
 
   ngOnInit() {
+  }
+
+  deleteProduct() {
+    let productId = this.product_Id;
+    this.productService.deleteProductRecord(productId).subscribe(data =>{
+        alert('user record has been deleted successfully');
+      },
+      error => alert('something went wrong!')
+    );
   }
 
 }

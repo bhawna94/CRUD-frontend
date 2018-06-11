@@ -14,7 +14,7 @@ export class UserHomeComponent implements OnInit {
     email: '',
     userName: '',
     phone: ''
-  }
+  };
   constructor(private userService: UserHomeService) { }
 
   ngOnInit() {

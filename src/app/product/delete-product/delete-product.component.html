@@ -1,3 +1,26 @@
-<p>
-  delete-product works!
-</p>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="jumbotron">
+        <form  #productForm="ngForm" class="form-horizontal" (submit)="deleteProduct();userForm.reset()">
+          <div class="form-group">
+            <label>Product Id:</label>
+            <input type="text" class="form-control"  #productId="ngModel" name="productId"required [(ngModel)]="productId">
+
+            <button type="submit" [disabled]="!productForm.valid" class="btn btn-info">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row spaceBetweenDiv">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+
+
