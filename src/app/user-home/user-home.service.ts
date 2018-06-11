@@ -18,4 +18,10 @@ export class UserHomeService {
 
     return this.http.post<User>(postUrl, userInformation, httpOptions);
   }
+
+  updateUserInformation(userInformation: User ): Observable<User> {
+    let postUrl = `${this.akkaBaseUrl}item/addItem`;
+
+    return this.http.put<User>(postUrl, userInformation, httpOptions);
+  }
 }

@@ -1,9 +1,10 @@
+<br>
 <div class="container">
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <div class="jumbotron">
-        <form  #userForm="ngForm" class="form-horizontal" (submit)="userForm.reset()">
+        <form  #userForm="ngForm" class="form-horizontal" (submit)="postItem(); userForm.reset()">
           <div class="form-group">
             <label>Product Id:</label>
             <input type="text" class="form-control"  #userId="ngModel" name="userId"required [(ngModel)]="item.productId">

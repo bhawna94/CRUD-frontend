@@ -15,24 +15,8 @@ export class UserHomeComponent implements OnInit {
     userName: '',
     phone: ''
   }
-  constructor(private userService: UserHomeService) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-  updateUser() {
-    let userToBeAdded: User = {
-      userId: this.user.userId,
-      name: this.user.name,
-      email: this.user.email,
-      userName: this.user.userName,
-      phone: this.user.phone
-    };
-    this.userService.postUserInformation(userToBeAdded).subscribe(data => {
-        alert('Item added to the inventory');
-        userToBeAdded = null;
-
-      },
-      error => alert('Something Went Wrong'));
-
   }
 }

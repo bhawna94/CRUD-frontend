@@ -18,4 +18,9 @@ export class ProductService {
     return this.http.post<Item>(postUrl, productInformation, httpOptions);
   }
 
+  updateItemInformation(productInformation: Item): Observable<Item> {
+    let postUrl = `${this.akkaBaseUrl}item/addItem`;
+    return this.http.put<Item>(postUrl, productInformation, httpOptions);
+  }
+
 }

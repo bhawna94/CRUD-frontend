@@ -25,8 +25,7 @@ export class AddProductComponent implements OnInit {
       productName: this.item.productName ,
       price: this.item.price
     };
-    this.productService.postItemInformation(itemToBeAdded).subscribe(data =>{
-        console.log(data)
+    this.productService.postItemInformation(itemToBeAdded).subscribe(data => {
         alert('Item added to the inventory');
         itemToBeAdded = null;
 
